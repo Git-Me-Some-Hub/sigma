@@ -13,7 +13,7 @@ logsource:
   service: security
 detection:
   selection:
-    EventID:
+    Event_ID:
     - 4720
   condition: selection
 falsepositives:
