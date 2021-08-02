@@ -1,0 +1,23 @@
+title: Microsoft 365 - International Login T01
+status: experimental
+description: Detects any International Access outside the US
+author: Donavan Mathis
+date: 2021/08/02
+modified: 2021/08/02
+references:
+- https://docs.microsoft.com/en-us/cloud-app-security/anomaly-detection-policy
+- https://docs.microsoft.com/en-us/cloud-app-security/policy-template-reference
+logsource:
+  service: o365
+detection:
+  selection:
+    status: success
+  filter:
+    country_iso_code: US
+  condition: selection and not filter
+falsepositives:
+- unknown
+level: medium
+tags:
+- attack.initial_access
+- attack.t1078
